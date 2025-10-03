@@ -1,0 +1,49 @@
+### Create a new AddressBook
+POST http://localhost:8080/addressbook
+Content-Type: application/json
+
+{
+  "name": "MyAddressBook"
+}
+
+### Get AddressBook with id = 1
+GET http://localhost:8080/addressbook/1
+Accept: application/json
+
+### Add a Buddy to AddressBook 1
+POST http://localhost:8080/addressbook/1/buddy
+Content-Type: application/json
+
+{
+  "name": "Damon",
+  "phoneNumber": "613-236-2390"
+}
+
+### Add another Buddy to AddressBook 1
+POST http://localhost:8080/addressbook/1/buddy
+Content-Type: application/json
+
+{
+  "name": "Stefan",
+  "phoneNumber": " 613-238-2986"
+}
+
+
+### List all Buddies in AddressBook 1
+GET http://localhost:8080/addressbook/1
+Accept: application/json
+
+### Delete Buddy with id = 1 from AddressBook 1
+DELETE http://localhost:8080/addressbook/1/buddy/1
+
+### List all AddressBooks
+GET http://localhost:8080/addressbook
+Accept: application/json
+
+### Delete Buddy with id = 1 from AddressBook 1
+DELETE http://localhost:8080/addressbook/1/buddy/2
+
+
+### View AddressBooks with id
+GET http://localhost:8080/addressbook/1/view
+Accept: application/json
