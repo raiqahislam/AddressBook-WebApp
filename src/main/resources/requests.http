@@ -40,10 +40,6 @@ DELETE http://localhost:8080/addressbook/1/buddy/1
 GET http://localhost:8080/addressbook
 Accept: application/json
 
-### Delete Buddy with id = 1 from AddressBook 1
-DELETE http://localhost:8080/addressbook/1/buddy/2
-
-
 ### View AddressBooks with id
 GET http://localhost:8080/addressbook/1/view
 Accept: application/json
