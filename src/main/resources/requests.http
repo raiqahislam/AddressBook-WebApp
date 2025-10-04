@@ -28,6 +28,15 @@ Content-Type: application/json
   "phoneNumber": " 613-238-2986"
 }
 
+### Add another Buddy to AddressBook 1
+POST http://localhost:8080/addressbook/1/buddy
+Content-Type: application/json
+
+{
+  "name": "Kate",
+  "phoneNumber": " 613-238-2986"
+}
+
 
 ### List all Buddies in AddressBook 1
 GET http://localhost:8080/addressbook/1
