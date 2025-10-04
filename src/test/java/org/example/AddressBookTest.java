@@ -16,9 +16,9 @@ public class AddressBookTest {
     @Before
     public void setUp(){
 
-        buddy1 = new BuddyInfo("Alice", "6132834");
-        buddy2 = new BuddyInfo("Bob", "613554");
-        buddy3 = new BuddyInfo("Carl", "61312305");
+        buddy1 = new BuddyInfo("Alice", "6132834", "44 Cook St");
+        buddy2 = new BuddyInfo("Bob", "613554", "98 Arbor St");
+        buddy3 = new BuddyInfo("Carl", "61312305", "100 Long Drive");
 
         addressBook = new AddressBook();
         addressBook.addBuddy(buddy1);

@@ -16,7 +16,8 @@ Content-Type: application/json
 
 {
   "name": "Damon",
-  "phoneNumber": "613-236-2390"
+  "phoneNumber": "613-236-2390",
+  "address": "77 Maple Ave"
 }
 
 ### Add another Buddy to AddressBook 1
@@ -25,7 +26,8 @@ Content-Type: application/json
 
 {
   "name": "Stefan",
-  "phoneNumber": " 613-238-2986"
+  "phoneNumber": "613-238-2986",
+  "address": "44 Cook Street"
 }
 
 ### Add another Buddy to AddressBook 1
@@ -34,7 +36,8 @@ Content-Type: application/json
 
 {
   "name": "Kate",
-  "phoneNumber": " 613-238-2986"
+  "phoneNumber": "613-348-5126",
+  "address": "12 Island Drive"
 }
 
 

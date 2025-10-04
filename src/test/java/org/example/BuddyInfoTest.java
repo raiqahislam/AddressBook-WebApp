@@ -12,7 +12,7 @@ public class BuddyInfoTest{
     @Before
     public void setUp(){
 
-        buddyInfo = new BuddyInfo("Alice", "6132834");
+        buddyInfo = new BuddyInfo("Alice", "6132834", "44 Cook St");
 
 
     }
@@ -20,7 +20,8 @@ public class BuddyInfoTest{
     @Test
     public void testConstructor() {
         assertEquals("Alice",buddyInfo.getName());
-        assertEquals("6132345",buddyInfo.getPhoneNum());
+        assertEquals("6132834",buddyInfo.getPhoneNum());
+        assertEquals("44 Cook St",buddyInfo.getAddress());
     }
 
 }

@@ -13,15 +13,18 @@ public class BuddyInfo {
     private Long id;
     private String name;
     private String phoneNumber;
+    private String address;
 
-    public BuddyInfo(String name, String phoneNumber) {
+    public BuddyInfo(String name, String phoneNumber, String address) {
         this.name = name;
         this.phoneNumber = phoneNumber;
+        this.address = address;
     }
     public BuddyInfo() {
         name = null;
         phoneNumber = "613-238-2986";
         id = 1L;
+        address = "123 Home Street";
     }
 
     public Long getId() {
@@ -42,12 +45,18 @@ public class BuddyInfo {
     public void setPhoneNum(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+    public String getAddress(){
+        return address;
+    }
+    public void setAddress(String address){
+        this.address = address;
+    }
 
     @Override
     public String toString() {
         return String.format(
-                "Buddy[id=%d, Name='%s', phoneNum='%s']",
-                id, name, phoneNumber);
+                "Buddy[id=%d, Name='%s', phoneNum='%s', address='%s']",
+                id, name, phoneNumber, address);
     }
 
 

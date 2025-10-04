@@ -7,7 +7,7 @@
 <body>
 <h1 th:text="'Buddies in ' + ${addressBook.name}"></h1>
 <ul>
-    <li th:each="buddy : ${addressBook.buddyList}" th:text="${buddy.name + ' - ' + buddy.phoneNum}"></li>
+    <li th:each="buddy : ${addressBook.buddyList}" th:text="${buddy.name + ' - ' + buddy.phoneNum + ' - ' + buddy.address}"></li>
 </ul>
 </body>
 </html>
