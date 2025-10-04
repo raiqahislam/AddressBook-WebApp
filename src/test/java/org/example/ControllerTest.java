@@ -1,6 +1,5 @@
 package org.example;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,4 +37,13 @@ public class ControllerTest {
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
     }
 
+    @Test
+    public void testCreateBuddyInfo() throws Exception {
+        String requestBody = "{\"name\":\"Damon\", \"phone\":\"61328938\"}";
+        mockMvc.perform(post("/addressbook")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(requestBody))
+                .andExpect(status().isOk());
+
+    }
 }
