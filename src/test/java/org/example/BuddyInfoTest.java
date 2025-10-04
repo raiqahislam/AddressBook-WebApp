@@ -3,15 +3,18 @@ package org.example;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-public class BuddyInfoTest {
+public class BuddyInfoTest{
 
     private BuddyInfo buddyInfo;
 
     @Before
-    public void setUp() {
-        buddyInfo = new BuddyInfo("Alice", "6132345");
+    public void setUp(){
+
+        buddyInfo = new BuddyInfo("Alice", "6132834");
+
+
     }
 
     @Test
