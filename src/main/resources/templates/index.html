@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Address Books</title>
+    <meta charset="UTF-8">
+    <title>Address Book SPA</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/webapp.js"></script>
 </head>
 <body>
-<h1>Welcome to Address Book</h1>
-<p><a th:href="@{/addressbook/1/view}">View Address Book #1</a></p>
-<p><a th:href="@{/addressbook/1/addBuddyForm}">Add Buddy to Address Book #1</a></p>
+<h1 class="header">Address Book SPA</h1>
+
+<input type="hidden" id="addressBookId" th:value="${id}"/>
+
+<h2>Add Buddy</h2>
+<label>Name:</label> <input type="text" id="name"><br>
+<label>Phone:</label> <input type="text" id="phone"><br>
+<label>Address:</label> <input type="text" id="address"><br>
+<button id="add-buddy">Add Buddy</button>
+
+<h2>Buddy List</h2>
+<div class="list"></div>
 </body>
 </html>

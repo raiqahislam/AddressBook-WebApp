@@ -1,6 +1,8 @@
 package org.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -50,4 +52,28 @@ public class AddressBookViewController {
         return "redirect:/addressbook/" + id + "/view";
     }
 
+    @GetMapping("/single")
+    public String showSPA(Model model) {
+        AddressBook addressBook = new AddressBook();
+        addressBookRepository.save(addressBook);
+        model.addAttribute("id", addressBook.getId());
+        return "index";
+    }
+
+    @PostMapping("/{addressBookId}/spaAddBuddy")
+    @ResponseBody
+    public ResponseEntity<String> processSPA(
+            @PathVariable Long addressBookId,
+            @RequestBody BuddyInfo buddyInfo ) {
+        AddressBook addressBook = addressBookRepository.findById(addressBookId).orElse(null);
+        if (addressBook != null) {
+            buddyInfoRepository.save(buddyInfo);
+            addressBook.addBuddy(buddyInfo);
+            addressBookRepository.save(addressBook);
+            return new ResponseEntity<>(buddyInfo.toString(), HttpStatus.OK);
+        }
+        return new ResponseEntity<>(
+                String.format("Error: No AddressBook found with ID=%d", addressBookId),
+                HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 }
