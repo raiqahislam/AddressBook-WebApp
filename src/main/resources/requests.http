@@ -45,8 +45,6 @@ Content-Type: application/json
 GET http://localhost:8080/addressbook/1
 Accept: application/json
 
-### Delete Buddy with id = 1 from AddressBook 1
-DELETE http://localhost:8080/addressbook/1/buddy/1
 
 ### List all AddressBooks
 GET http://localhost:8080/addressbook

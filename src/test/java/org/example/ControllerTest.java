@@ -39,7 +39,7 @@ public class ControllerTest {
 
     @Test
     public void testCreateBuddyInfo() throws Exception {
-        String requestBody = "{\"name\":\"Stefan\", \"phone\":\"61328938\"}";
+        String requestBody = "{\"name\":\"Stefan\", \"phone\":\"61328938\",\"address\":\"44 Cook St\"}";
         mockMvc.perform(post("/addressbook")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(requestBody))

@@ -27,6 +27,16 @@ public class AddressBookViewController {
         return "viewAddressBook";
     }
 
+    @GetMapping("/{id}/addBuddyForm")
+    public String showAddBuddyForm(@PathVariable Long id, Model model) {
+        AddressBook ab = addressBookRepository.findById(id).orElse(null);
+        if (ab == null) return "error";
+
+        model.addAttribute("addressBook", ab);
+        return "addBuddy";
+    }
+
+
     @PostMapping("/{id}/addBuddy")
     public String addBuddy(@PathVariable Long id, @RequestParam String name, @RequestParam String phone, @RequestParam String address) {
         AddressBook ab = addressBookRepository.findById(id).orElse(null);
