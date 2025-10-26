@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create Address Book</title>
+</head>
+<body>
+<h2>Create a New Address Book</h2>
+
+<form th:action="@{/addressbook/create}" th:object="${addressBook}" method="post">
+    <label for="name">Address Book Name:</label>
+    <input type="text" id="name" th:field="*{name}" placeholder="My Contacts"/><br><br>
+
+    <input type="submit" value="Create Address Book"/>
+</form>
+
+<p><a th:href="@{/addressbook/1/view}">View Address Book #1</a></p>
+</body>
+</html>

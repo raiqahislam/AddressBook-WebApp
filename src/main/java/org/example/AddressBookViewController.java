@@ -20,6 +20,19 @@ public class AddressBookViewController {
         this.buddyInfoRepository = buddyInfoRepository;
     }
 
+    @GetMapping("/createForm")
+    public String showCreateForm(Model model) {
+        model.addAttribute("addressBook", new AddressBook());
+        return "createAddressBook";  // name of the Thymeleaf template
+    }
+
+    @PostMapping("/create")
+    public String createAddressBook(@ModelAttribute AddressBook addressBook) {
+        addressBookRepository.save(addressBook);
+        return "redirect:/addressbook/" + addressBook.getId() + "/view";
+    }
+
+
     @GetMapping("/{id}/view")
     public String viewAddressBook(@PathVariable Long id, Model model) {
         AddressBook ab = addressBookRepository.findById(id).orElse(null);
