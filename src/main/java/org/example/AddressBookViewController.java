@@ -23,7 +23,7 @@ public class AddressBookViewController {
     @GetMapping("/createForm")
     public String showCreateForm(Model model) {
         model.addAttribute("addressBook", new AddressBook());
-        return "createAddressBook";  // name of the Thymeleaf template
+        return "createAddressBook";
     }
 
     @PostMapping("/create")

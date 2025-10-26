@@ -8,7 +8,7 @@
 
 <form th:action="@{/addressbook/create}" th:object="${addressBook}" method="post">
     <label for="name">Address Book Name:</label>
-    <input type="text" id="name" th:field="*{name}" placeholder="My Contacts"/><br><br>
+    <input type="text" id="name" th:field="*{name}" placeholder=""/><br><br>
 
     <input type="submit" value="Create Address Book"/>
 </form>
